@@ -1,8 +1,8 @@
-package OnlineShop.online_shop;
+package OnlineShop.online_shop.IRepository;
 
 import org.springframework.data.repository.CrudRepository;
 
-import OnlineShop.online_shop.User;
+import OnlineShop.online_shop.tables.User;
 // This will be AUTO IMPLEMENTED by Spring into a Bean called userRepository
 // CRUD refers Create, Read, Update, Delete
 
