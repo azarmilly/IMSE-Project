@@ -1,9 +1,6 @@
 package OnlineShop.online_shop.tables;
 
-import javax.persistence.Entity;
-import javax.persistence.GeneratedValue;
-import javax.persistence.GenerationType;
-import javax.persistence.Id;
+import javax.persistence.*;
 
 @Entity // This tells Hibernate to make a table out of this class
 public class ShoppingList {
@@ -16,7 +13,8 @@ public class ShoppingList {
 
     private int itemCount;
 
-    private int userId;
+    @ManyToOne
+    private User user;
 
     public Integer getShoppingListId() {
         return shoppingListId;
@@ -42,11 +40,11 @@ public class ShoppingList {
         this.itemCount = itemCount;
     }
 
-    public int getUserId() {
-        return userId;
+    public User getUser() {
+        return user;
     }
 
-    public void setUserId(int userId) {
-        this.userId = userId;
+    public void setUser(User user) {
+        this.user = user;
     }
 }

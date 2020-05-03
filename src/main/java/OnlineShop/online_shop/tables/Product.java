@@ -1,9 +1,10 @@
 package OnlineShop.online_shop.tables;
 
-import javax.persistence.Entity;
-import javax.persistence.GeneratedValue;
-import javax.persistence.GenerationType;
-import javax.persistence.Id;
+import org.hibernate.annotations.Type;
+
+import javax.persistence.*;
+import java.util.ArrayList;
+import java.util.List;
 
 @Entity // This tells Hibernate to make a table out of this class
 
@@ -14,13 +15,20 @@ public class Product {
 
     private double price;
 
+    @Type(type = "text")
     private String description;
 
     private boolean availability;
 
     private double rating;
 
-    private int manufacturerId;
+    //@ManyToMany(fetch = FetchType.LAZY, mappedBy = "manufacturer")
+    //private List<Manufacturer> posts = new ArrayList<>();
+
+
+
+    @ManyToOne
+    private Manufacturer manufacturer;
 
     public Integer getId() {
         return productId;
@@ -62,11 +70,11 @@ public class Product {
         this.rating = rating;
     }
 
-    public int getManufacturerId() {
-        return manufacturerId;
+    public Manufacturer getManufacturer() {
+        return manufacturer;
     }
 
-    public void setManufactorerId(int manufacturerId) {
-        this.manufacturerId = manufacturerId;
+    public void setManufacturer(Manufacturer manufacturer) {
+        this.manufacturer = manufacturer;
     }
 }
