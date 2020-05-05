@@ -26,6 +26,10 @@ public class User {
     private String email;
 
     public User() {}
+    public User(String firstName, String secondName){
+        this.firstName = firstName;
+        this.secondName = secondName;
+    }
 
     public Integer getUserId() {
         return userId;
