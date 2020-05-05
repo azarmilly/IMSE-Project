@@ -1,27 +1,33 @@
 package OnlineShop.online_shop.tables;
 
-import javax.persistence.Entity;
-import javax.persistence.GeneratedValue;
-import javax.persistence.GenerationType;
-import javax.persistence.Id;
+import javax.persistence.*;
+import java.util.HashSet;
+import java.util.Set;
 
 @Entity // This tells Hibernate to make a table out of this class
 public class Manufacturer {
 
     @Id
     @GeneratedValue(strategy= GenerationType.AUTO)
-    private Integer manufacturerId;
+    private Integer id;
 
     private String name;
 
     private String sector;
 
-    public Integer getManufacturerId() {
-        return manufacturerId;
+//    @ManyToMany(fetch = FetchType.LAZY, cascade = CascadeType.ALL)
+//    @JoinTable(name = "products_manufacturers",
+//            joinColumns = {@JoinColumn(name = "product_id", nullable = false, updatable = false)},
+//            inverseJoinColumns = {@JoinColumn(name = "manufacturer_id", nullable = false, updatable = false)}
+//    )
+    //private Set<Product> products = new HashSet<>();
+
+    public Integer getId() {
+        return id;
     }
 
-    public void setManufacturerId(Integer manufacturerId) {
-        this.manufacturerId = manufacturerId;
+    public void setId(Integer id) {
+        this.id = id;
     }
 
     public String getName() {

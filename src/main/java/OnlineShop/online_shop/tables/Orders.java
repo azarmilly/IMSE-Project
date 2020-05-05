@@ -20,7 +20,8 @@ public class Orders {
 
     private String address;
 
-    private int userId;
+    @ManyToOne
+    private User user;
 
     public Integer getOrderId() {
         return orderId;
@@ -62,11 +63,11 @@ public class Orders {
         this.address = address;
     }
 
-    public int getUserId() {
-        return userId;
+    public User getUser() {
+        return user;
     }
 
-    public void setUserId(int userId) {
-        this.userId = userId;
+    public void setUser(User user) {
+        this.user = user;
     }
 }

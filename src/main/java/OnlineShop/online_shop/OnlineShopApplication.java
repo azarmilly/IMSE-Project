@@ -10,11 +10,11 @@ public class OnlineShopApplication {
 
 		SpringApplication.run(OnlineShopApplication.class, args);
 		Generator generator = new Generator();
-		//generator.generateUserData();
-		//generator.generateProductData();
-		//generator.generateManufacturerData();
-		//generator.generateShoppingListData();
-		//generator.generateOrdersData();
+		generator.generateUserData();
+		generator.generateManufacturerData();
+		generator.generateProductData();
+		generator.generateOrdersData();
+		generator.generateShoppingListData();
 	}
 
 }
